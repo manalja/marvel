@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.min.css">
+   
+    <title>Exercice-5</title>
+</head>
+
+<body>
+  <div id="app">
+    <input type="text" v-model="searchQuery" placeholder="Rechercher un super-héros">
+    <ul>
+      <li v-for="hero in filteredHeroes" @click="showDetails(hero)">{{ hero.name }}</li>
+    </ul>
+  </div>
+
+  <div id="detailsModal" v-if="selectedHero">
+    <div class="modal-content">
+      <span class="close" @click="closeModal">&times;</span>
+      <h2>{{ selectedHero.name }}</h2>
+      <p>Identité secrète: {{ selectedHero.secretIdentity }}</p>
+      <p>Pouvoirs: {{ selectedHero.powers.join(', ') }}</p>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/vue@2.6.14/dist/vue.js"></script>
+  <script src="js/main.js"></script>
+</body>
+ 
+
+</html>
