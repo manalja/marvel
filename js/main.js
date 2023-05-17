@@ -18,11 +18,6 @@ new Vue({
   methods: {
     showDetails(hero) {
       this.selectedHero = hero;
-      document.getElementById('detailsModal').style.display = 'block';
-    },
-    closeModal() {
-      this.selectedHero = null;
-      document.getElementById('detailsModal').style.display = 'none';
     },
     fetchHeroes() {
       fetch('https://akabab.github.io/superhero-api/api/all.json')
